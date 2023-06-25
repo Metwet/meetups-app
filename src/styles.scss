@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+$AccentColor: rgba(184, 85, 38, 1);
+$BackgroundColor:rgba(30, 30, 30, 1);
+$BoldColor: rgba(233, 233, 233, 1);
+$DefaultColor: rgba(44, 44, 44, 1);
+$InfoColor: rgba(0, 134, 151, 1);
+$PrimaryColor: rgba(180, 180, 192, 1);
+$SecondaryColor: rgba(76, 63, 120, 1);
+
+body {
+  background: $BackgroundColor;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5px;
+}
+  

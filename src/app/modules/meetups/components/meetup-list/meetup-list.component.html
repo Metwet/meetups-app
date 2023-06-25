@@ -1,0 +1,8 @@
+<div class="list__block">
+    <div class="meetup-card" *ngIf="meetups.length > 0; else emptyList">
+        <app-meetup-card *ngFor="let meetup of meetups" [meetup]="meetup"></app-meetup-card>
+    </div>
+    <ng-template #emptyList>
+        <h2>Список пуст</h2>
+    </ng-template>
+</div>

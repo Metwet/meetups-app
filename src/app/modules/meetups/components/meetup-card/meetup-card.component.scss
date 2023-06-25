@@ -1,0 +1,23 @@
+@import '../../../../../styles.scss';
+
+.meetup__card {
+    background: $DefaultColor;
+    color: $PrimaryColor;
+    border: 0.3px solid $PrimaryColor;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.title__block {
+    color: $BoldColor;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footercard__block {
+    color: $BoldColor;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}

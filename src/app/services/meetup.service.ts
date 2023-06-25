@@ -8,7 +8,10 @@ export class MeetupService {
 
   private meetups: Meetup[] = [];
 
-  constructor() { }
+  constructor() {
+    this.addMeetup({title: `Meeting about Angular`, description: `Angular is cool!`});
+    this.addMeetup({title: `Meeting about React`, description: `React is cool too!`});
+  }
 
   getMeetups(): Meetup[] {
     return this.meetups;
