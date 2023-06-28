@@ -1,0 +1,36 @@
+@import '../../../../../styles.scss';
+
+.login__block {
+    display: flex;
+    justify-content: center;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    width: 342px;
+}
+
+.login__input {
+    height: 50px;
+    margin-bottom: 24px;
+    background: $DefaultColor;
+    border-radius: 5px;
+    border: none;
+    color: $PrimaryColor;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.login__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.signup__link {
+    text-decoration: underline;
+    color: $InfoColor;
+    font-size: 18px;
+}

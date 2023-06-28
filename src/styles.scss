@@ -16,4 +16,19 @@ body {
     margin: 0 auto;
     padding: 5px;
 }
-  
+
+.button {
+  display: flex;
+  width: 125px;
+  height: 50px;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  background: $SecondaryColor;
+  color: $PrimaryColor;
+  font-size: 18px;
+  box-shadow: 0px 4px 4px 0px rgba(62, 5, 4, 0.25);
+  border: none;
+}

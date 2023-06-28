@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MeetupsModule } from './modules/meetups/meetups.module';
+import { HttpClientModule } from '@angular/common/http'
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { MeetupsModule } from './modules/meetups/meetups.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MeetupsModule
+    MeetupsModule,
+    AuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
