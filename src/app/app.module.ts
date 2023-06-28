@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MeetupsModule } from './modules/meetups/meetups.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AuthModule } from './modules/auth/auth.module';
+import { LabModule } from './modules/lab/lab.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AuthModule } from './modules/auth/auth.module';
     AppRoutingModule,
     MeetupsModule,
     AuthModule,
+    LabModule,
     HttpClientModule
   ],
   providers: [],

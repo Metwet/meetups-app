@@ -1,0 +1,26 @@
+<div class="container lab__block">
+    <h2>Lab N3</h2>
+    <div *ngIf="chainOne.length > 0">
+        <h3>Chain 1 (filtered Lucas's Star Wars films includes 'of' in title)</h3>
+        <ul>
+          <li *ngFor="let film of chainOne">{{ film }}</li>
+        </ul>
+    </div>
+    <div *ngIf="chainTwo.length > 0">
+        <h3>Chain 2 (Star Wars films where Rick McCallum is the producer and only the first three elements are got from the stream)</h3>
+        <ul>
+          <li *ngFor="let film of chainTwo">{{ film }}</li>
+        </ul>
+    </div>
+    <div *ngIf="chainThree.length > 0">
+        <h3>Chain 3 (My stream where I used operators Ship, Map (twice) and Filter)</h3>
+        <ul>
+          <li *ngFor="let sub of chainThree">{{ sub }}</li>
+        </ul>
+    </div>
+    <div class="task2">
+        <h3>Task 2</h3>
+        <button class="button button_complete" (click)="this.task2()">Complete Task 2</button>
+        <div *ngIf="loadingStatus" class="task__text">Result in console</div>
+    </div>
+</div>
