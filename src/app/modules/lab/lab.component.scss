@@ -4,7 +4,7 @@
     color: $BoldColor;
 }
 
-.task2{
+.task{
     margin-top: 50px;
 }
 
@@ -15,4 +15,23 @@
 .task__text {
     font-size: 24px;
     margin-top: 20px;
+}
+
+.task__input {
+    height: 50px;
+    margin-bottom: 24px;
+    background: $DefaultColor;
+    border-radius: 5px;
+    border: none;
+    color: $PrimaryColor;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
 }

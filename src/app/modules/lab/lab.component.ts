@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable, ReplaySubject, Subject, filter, from, map, skip, switchMap, take } from 'rxjs';
+import { Observable, ReplaySubject, Subject, filter, from, map, skip, switchMap, take, finalize  } from 'rxjs';
+import { FormControl, Validators, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-lab',
@@ -20,7 +21,7 @@ export class LabComponent {
     this.showChainThree();
   }
 
-  // ---- task 1 ----
+  // ---- task 1 ---- 
   showChainOneAndTwo(): void {
     const getStarWarsFilms = () => {      
       return this.http.get<any>('https://swapi.dev/api/films').pipe(
@@ -114,5 +115,31 @@ export class LabComponent {
         }
       }, 2000)
     })
+  }
+
+  // ---- task 3 ----
+  nameControl = new FormControl('', [Validators.required]);
+  isNameFound = false;
+
+  validateName() {
+    const name = this.nameControl.value;
+    const url = `https://swapi.dev/api/people?search=${name}`;
+    this.nameControl.setErrors({ validating: true });
+    this.http.get<any>(url).pipe(
+      switchMap(response => {
+        const results = response.results;
+        const isNameExists = results.some((result: any) => result.name === name);
+        this.isNameFound = isNameExists;
+        if (isNameExists) {
+          this.nameControl.setErrors(null);
+        } else {
+          this.nameControl.setErrors({ nameNotExists: true });
+        }
+        return this.nameControl.statusChanges;
+      }),
+      finalize(() => {
+        this.nameControl.setErrors(null);
+      })
+    ).subscribe();
   }
 }

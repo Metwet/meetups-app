@@ -7,6 +7,7 @@ import { MeetupsModule } from './modules/meetups/meetups.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AuthModule } from './modules/auth/auth.module';
 import { LabModule } from './modules/lab/lab.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LabModule } from './modules/lab/lab.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MeetupsModule,
     AuthModule,

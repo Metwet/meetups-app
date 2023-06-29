@@ -1,5 +1,6 @@
 <div class="container lab__block">
     <h2>Lab N3</h2>
+    <h3>Task 1</h3>
     <div *ngIf="chainOne.length > 0">
         <h3>Chain 1 (filtered Lucas's Star Wars films includes 'of' in title)</h3>
         <ul>
@@ -18,9 +19,23 @@
           <li *ngFor="let sub of chainThree">{{ sub }}</li>
         </ul>
     </div>
-    <div class="task2">
+    <div class="task">
         <h3>Task 2</h3>
         <button class="button button_complete" (click)="this.task2()">Complete Task 2</button>
         <div *ngIf="loadingStatus" class="task__text">Result in console</div>
+    </div>
+    <div class="task">
+      <h3>Task 3</h3>
+      <p>Enter the name of the star wars character</p>
+      <input type="text" [formControl]="nameControl" class="task__input" (input)="validateName()">
+      <div *ngIf="nameControl.errors && nameControl.errors['validating']" class="loading-message">
+        Loading...
+      </div>
+      <div *ngIf="isNameFound" class="success-message">
+        This name exists in the Star Wars universe.
+      </div>
+      <div *ngIf="nameControl.errors && nameControl.errors['nameNotExists'] && !nameControl.errors['validating']" class="error-message">
+        This name does not exist in the Star Wars universe.
+      </div>           
     </div>
 </div>
