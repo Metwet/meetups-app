@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Meetup } from '../models/meetup.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeetupService {
 
+  private baseUrl: string = `${environment.backendOrigin}`
+
   private meetups: Meetup[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.addMeetup({title: `Meeting about Angular`, description: `Angular is cool!`});
     this.addMeetup({title: `Meeting about React`, description: `React is cool too!`});
   }

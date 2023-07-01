@@ -1,7 +1,7 @@
 <div class="container login__block">
     <form class="login__form">
-        <input type="email" name="email" class="login__input" placeholder="Login" [(ngModel)]="email">
-        <input type="password" name="password" class="login__input" placeholder="Password" [(ngModel)]="password">
+        <input type="email" name="email" class="input login__input" placeholder="Login" [(ngModel)]="email">
+        <input type="password" name="password" class="input login__input" placeholder="Password" [(ngModel)]="password">
         <div class="login__footer">
             <a href="#" class="signup__link">How to create account?</a>
             <button class="button" type="submit" (click)="login(email, password)">Log in</button>

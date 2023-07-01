@@ -35,4 +35,8 @@ export class AuthService {
     localStorage.removeItem('del_meetups_auth_token');
     this.routes.navigate([`/login`])
   }
+
+  getToken():string {
+    return localStorage.getItem('del_meetups_auth_token') || '';
+  }
 }

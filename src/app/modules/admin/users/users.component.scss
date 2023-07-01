@@ -1,0 +1,70 @@
+@import "src/styles.scss";
+
+.user__block {
+    background: $DefaultColor;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    margin-bottom: 12px;
+    border: 0.3px solid $PrimaryColor;
+    gap: 0;
+}
+
+.email__block, .password__block {
+    border-right: 0.3px solid $PrimaryColor;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 30%;
+}
+
+.input__user {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input__user:focus {
+    border: 3px solid $SecondaryColor;
+    border-radius: 3px;
+    outline: none;
+}
+
+.select__block {
+    border-right: 0.3px solid $PrimaryColor;
+    display: flex;
+    padding: 12px 30px;
+}
+
+.select__user {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 3px 10px;
+    border: 3px solid transparent;
+}
+
+.select__user:focus {
+    border: 3px solid $SecondaryColor;
+    border-radius: 3px;
+    outline: none;
+}
+
+.buttons__block {
+    display: flex;
+    padding: 8px 30px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.button__block {
+    border: 1px solid $AccentColor;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
