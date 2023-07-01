@@ -13,6 +13,11 @@ export class MeetupListComponent {
   constructor(private meetupService: MeetupService) {}
 
   ngOnInit():void {
-    this.meetups = this.meetupService.getMeetups();
+    this.meetupService.getMeetups().subscribe(
+      (meetups: Meetup[])=>{
+        console.log(meetups);
+        this.meetups = meetups
+      }
+    );
   }
 }

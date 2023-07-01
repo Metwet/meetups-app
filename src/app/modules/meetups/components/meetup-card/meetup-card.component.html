@@ -1,15 +1,46 @@
 <div class="container meetup__card">
     <div class="title__block">
-        <div class="title">{{meetup.title}}</div>
-        <div class="date-creation">30.02.2025 13:37</div>
+        <div class="title__left">
+            <div class="title">{{meetup.name}}</div>
+            <div class="subscribers">подписчики: {{meetup.users.length}}</div>
+        </div>
+        <div class="title__right">
+            <div class="date-creation">{{meetup.time | date: 'dd.MM.yyyy HH:mm'}}</div>
+            <div class="place">{{meetup.location}}</div>
+            <div class="duration">Длительность: {{meetup.duration}} м.</div>
+        </div>
     </div>
-    <div class="description__block">
+    <div class="description__block" *ngIf="meetup.description">
         {{meetup.description}}
     </div>
+    <div class="description__block moved__block" *ngIf="meetup.target_audience" [ngClass]="{ 'visible': isBlockVisible }">
+        <h3 class="description__tile">Целевая аудитория</h3>
+        {{meetup.target_audience}}
+    </div>
+    <div class="description__block moved__block" *ngIf="meetup.need_to_know" [ngClass]="{ 'visible': isBlockVisible }">
+        <h3 class="description__tile">Что надо знать?</h3>
+        {{meetup.need_to_know}}
+    </div>
+    <div class="description__block moved__block" *ngIf="meetup.will_happen" [ngClass]="{ 'visible': isBlockVisible }">
+        <h3 class="description__tile">Что будет?</h3>
+        {{meetup.will_happen}}
+    </div>
+    <div class="description__block moved__block" *ngIf="meetup.reason_to_come" [ngClass]="{ 'visible': isBlockVisible }">
+        <h3 class="description__tile">Почему надо обязательно прийти?</h3>
+        {{meetup.reason_to_come}}
+    </div>
     <div class="footercard__block">
-        <div class="creator">Author</div>
+        <div class="creator__block">
+            <div class="img__block">
+                <img src="/assets/img/user.svg" alt="user-icon">
+            </div>
+            <div class="creator">{{meetup.owner.fio}}</div>
+        </div>
         <div class="buttons_block">
-            <button>Я пойду</button>
+            <button class="button">Я пойду</button>
+            <button class="button arrow_button" (click)="toggleBlockVisibility()">
+                <img src="/assets/img/arrow.png" alt="arrow button" [ngClass]="{ 'rotated': isBlockVisible }">
+            </button>
         </div>
     </div>
 </div>

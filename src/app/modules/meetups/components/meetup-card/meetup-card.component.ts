@@ -8,6 +8,11 @@ import { Meetup } from 'src/app/models/meetup.model';
 })
 export class MeetupCardComponent {
   constructor () {}
+  isBlockVisible = false;
+
+  toggleBlockVisibility() {
+    this.isBlockVisible = !this.isBlockVisible;
+  }
 
   @Input() meetup!: Meetup;
 }

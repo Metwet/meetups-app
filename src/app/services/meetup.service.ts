@@ -2,27 +2,22 @@ import { Injectable } from '@angular/core';
 import { Meetup } from '../models/meetup.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeetupService {
 
-  private baseUrl: string = `${environment.backendOrigin}`
+  private baseUrl: string = `${environment.backendOrigin}/meetup`
 
-  private meetups: Meetup[] = [];
+  constructor(private http: HttpClient) {  }
 
-  constructor(private http: HttpClient) {
-    this.addMeetup({title: `Meeting about Angular`, description: `Angular is cool!`});
-    this.addMeetup({title: `Meeting about React`, description: `React is cool too!`});
-  }
-
-  getMeetups(): Meetup[] {
-    return this.meetups;
+  getMeetups(): Observable<Meetup[]> {
+    return this.http.get<Meetup[]>(`${this.baseUrl}`);
   }
 
   addMeetup(meetup: Meetup):void {
-    this.meetups.push(meetup);
   }
 
   updateMeetup(meetup: Meetup):void {
@@ -30,9 +25,9 @@ export class MeetupService {
   }
 
   deleteMeetup(meetup: Meetup): void {
-    const index = this.meetups.indexOf(meetup);
-    if(index > -1){
-      this.meetups.splice(index, 1);
-    }
+    // const index = this.meetups.indexOf(meetup);
+    // if(index > -1){
+    //   this.meetups.splice(index, 1);
+    // }
   }
 }

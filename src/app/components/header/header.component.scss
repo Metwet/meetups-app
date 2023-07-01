@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .logos__block {
@@ -19,7 +20,6 @@
 
 .app-name {
     font-size: 56px;
-    font-family: Open Sans Hebrew Condensed;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -34,7 +34,7 @@
 .nav__link {
     text-decoration: none;
     font-size: 24px;
-    font-family: Cherry Bomb;
+    font-family: 'Cherry Bomb One', cursive;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
