@@ -17,11 +17,15 @@ export class AuthService {
     return !!localStorage.getItem(`del_meetups_auth_token`);
   }
 
+  checkAdminStatus(){
+    return !!localStorage.getItem(`del_meetups_ADMIN`);
+  }
+
   isAdmin():Observable<boolean> {
     return this.http.get<any>(`${this.baseUrl}/role/ADMIN`).pipe(
       map((response)=>{
-        console.log(response);
         if(response.name === 'ADMIN'){
+          localStorage.setItem('del_meetups_ADMIN', response.name)
           return true
         } else {
           return false
@@ -47,6 +51,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('del_meetups_auth_token');
+    localStorage.removeItem('del_meetups_ADMIN');
     this.routes.navigate([`/login`])
   }
 

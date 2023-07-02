@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -17,8 +18,10 @@ export class LoginComponent {
   }
 
   login(email: string, password: string):void {
-    this.authService.login(email, password).subscribe(()=>{
-    this.routers.navigate([`/main`])
+    this.authService.login(email, password).pipe(
+      switchMap(() => this.authService.isAdmin())
+    ).subscribe(()=>{
+      this.routers.navigate([`/main`])
     })
   }
 }
