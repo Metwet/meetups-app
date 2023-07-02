@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Meetup } from 'src/app/models/meetup.model';
 import { MeetupService } from 'src/app/services/meetup.service';
 
@@ -8,6 +8,7 @@ import { MeetupService } from 'src/app/services/meetup.service';
   styleUrls: ['./meetup-list.component.scss']
 })
 export class MeetupListComponent {
+  @Input() filterUserId: number | null = null;
   meetups: Meetup[] = [];
 
   constructor(private meetupService: MeetupService) {}
@@ -15,8 +16,13 @@ export class MeetupListComponent {
   ngOnInit():void {
     this.meetupService.getMeetups().subscribe(
       (meetups: Meetup[])=>{
-        console.log(meetups);
-        this.meetups = meetups
+        
+        if(this.filterUserId){
+          this.meetups = meetups.filter((meetup)=>meetup.owner.id === this.filterUserId)
+          console.log(this.meetups);
+        } else {
+          this.meetups = meetups;
+        }
       }
     );
   }

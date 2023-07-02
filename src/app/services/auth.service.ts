@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 import { Observable, Subject, catchError, map, of } from 'rxjs';
+import jwtDecode from 'jwt-decode';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +43,6 @@ export class AuthService {
     .pipe(
       map((res)=>{
         if(res.token){
-          console.log(res.token);
           localStorage.setItem('del_meetups_auth_token', res.token)
         }
         return null;
@@ -57,5 +58,9 @@ export class AuthService {
 
   getToken():string {
     return localStorage.getItem('del_meetups_auth_token') || '';
+  }
+
+  getCurrentUser():User {
+    return jwtDecode(this.getToken());
   }
 }

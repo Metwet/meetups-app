@@ -25,9 +25,6 @@ export class MeetupService {
   }
 
   deleteMeetup(meetup: Meetup): void {
-    // const index = this.meetups.indexOf(meetup);
-    // if(index > -1){
-    //   this.meetups.splice(index, 1);
-    // }
+
   }
 }

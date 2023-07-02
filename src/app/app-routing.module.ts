@@ -6,11 +6,12 @@ import { LabComponent } from './modules/lab/lab.component';
 import { UsersComponent } from './modules/admin/users/users.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { MymeetupsComponent } from './modules/meetups/components/mymeetups/mymeetups.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'main', component: MeetupListComponent, canActivate: [AuthGuard]},
-  { path: 'lab', component: LabComponent, canActivate: [AuthGuard]},
+  { path: 'mymeetups', component: MymeetupsComponent, canActivate: [AuthGuard]},
   { path: 'users', component: UsersComponent, canActivate: [AdminGuard]},
   { path: '', redirectTo: 'main', pathMatch: 'full'},
   { path: '**', redirectTo: 'main'},
