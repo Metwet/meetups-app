@@ -13,15 +13,20 @@
                 </div>
             </div>
         </div>
-        <nav class="nav__block">
+        <nav class="nav__block" *ngIf="isLoggedIn();">
             <a class="nav__link" routerLink="/main">Все митапы</a>
             <a class="nav__link" routerLink="/lab">Мои митапы</a>
             <a class="nav__link" routerLink="/users">Пользователи</a>
         </nav>
         <div class="buttons__block">
-            <div class="login__button">
-                <img src="/assets/img/user.svg" alt="login" routerLink="/login">
+            <div class="login__button"  *ngIf="isLoggedIn(); else logoutButton" (click)="logout()">
+                <img src="/assets/img/logout.svg" alt="logout" routerLink="/login">
             </div>
+            <ng-template #logoutButton>
+                <div class="login__button" >
+                    <img src="/assets/img/user.svg" alt="login" routerLink="/login">
+                </div>
+            </ng-template>
         </div>
     </div>
 </header>

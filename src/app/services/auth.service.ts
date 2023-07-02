@@ -2,24 +2,38 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
-import { Observable, map } from 'rxjs';
+import { Observable, Subject, catchError, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl: string = `${environment.backendOrigin}/auth`;
-  
+  private baseUrl: string = `${environment.backendOrigin}`;
+
   constructor(private http: HttpClient, private routes: Router) { }
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem(`del_meetups_auth_token`);
   }
 
+  isAdmin():Observable<boolean> {
+    return this.http.get<any>(`${this.baseUrl}/role/ADMIN`).pipe(
+      map((response)=>{
+        console.log(response);
+        if(response.name === 'ADMIN'){
+          return true
+        } else {
+          return false
+        }
+      }),
+      catchError(()=> of(false))
+    )
+  }
+
   login(email: string, password: string): Observable<null> {
     return this.http
-    .post<{token: string}>(`${this.baseUrl}/login`, {email, password})
+    .post<{token: string}>(`${this.baseUrl}/auth/login`, {email, password})
     .pipe(
       map((res)=>{
         if(res.token){
