@@ -25,8 +25,8 @@ export class MeetupService {
     return this.http.put<any>(`${this.baseUrl}/${meetupId}`, meetup)
   }
 
-  deleteMeetup(meetup: Meetup): void {
-
+  deleteMeetup(meetupId:number):Observable<Meetup> {
+    return this.http.delete<Meetup>(`${this.baseUrl}/${meetupId}`)
   }
 
   subscribeToMeetup(meetupId:number, userId:number):Observable<Meetup> {

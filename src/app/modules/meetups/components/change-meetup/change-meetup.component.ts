@@ -46,7 +46,16 @@ export class ChangeMeetupComponent {
   updateMeetup(){
     this.meetupService.updateMeetup(this.meetupData, this.meetup.id).subscribe(
       (res)=>{
-        console.log('Митап успешно изменен:', res);
+        console.log('Митап успешно изменён:', res);
+        this.router.navigate(['/mymeetups']);
+      }
+    )
+  }
+
+  deleteMeetup(){
+    this.meetupService.deleteMeetup(this.meetup.id).subscribe(
+      (res)=>{
+        console.log('Митап успешно удалён:', res);
         this.router.navigate(['/mymeetups']);
       }
     )

@@ -40,7 +40,7 @@
             <textarea class="input input__create textarea" type="text" name="reason_to_come" [(ngModel)]="meetupData.reason_to_come"></textarea>
         </div>
         <div class="button__block">
-            <button class="button button__delete">Удалить</button> 
+            <button class="button button__delete" (click)="deleteMeetup()">Удалить</button> 
             <button class="button button__cansel" routerLink="/mymeetups">Отменить</button> 
             <button class="button" type="submit" (click)="updateMeetup()">Сохранить</button>
         </div>
