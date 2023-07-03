@@ -21,8 +21,8 @@ export class MeetupService {
     return this.http.post<any>(`${this.baseUrl}`, meetup)
   }
 
-  updateMeetup(meetup: Meetup):void {
-
+  updateMeetup(meetup:any, meetupId:number):Observable<Meetup> {
+    return this.http.put<any>(`${this.baseUrl}/${meetupId}`, meetup)
   }
 
   deleteMeetup(meetup: Meetup): void {

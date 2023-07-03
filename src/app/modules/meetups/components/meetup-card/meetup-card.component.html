@@ -37,7 +37,10 @@
             <div class="creator">{{meetup.owner.fio}}</div>
         </div>
         <div class="buttons_block">
-            <button class="button" [class.subscribed]="isSubscribed" (click)="toggleSubscription()">
+            <button class="button" *ngIf="isCardFather" (click)="editMeetup()">
+                Редактировать
+            </button>
+            <button class="button" [class.subscribed]="isSubscribed" (click)="toggleSubscription()" *ngIf="!isCardFather">
                 {{ isSubscribed ? 'Не смогу пойти' : 'Я пойду' }}
             </button>
             <button class="button arrow_button" (click)="toggleBlockVisibility()">

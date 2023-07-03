@@ -1,0 +1,99 @@
+@import "src/styles.scss";
+
+.create__block {
+    background: $DefaultColor;
+    margin-bottom: 40px;
+}
+
+.create__title {
+    width: 100%;
+    text-align: center;
+    color: $BoldColor;
+    font-size: 24px;
+    font-family: 'Cherry Bomb One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 24px 0;
+}
+
+.form__block {
+    padding: 0 15%;
+    color: $BoldColor;
+}
+
+.input__block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    margin-bottom: 30px;
+}
+
+.label__create {
+    width: 20%;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input__create {
+    width: 80%;
+    border-radius: 3px;
+    border: 3px solid $SecondaryColor;
+    height: 34px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 16px;
+}
+
+.date-time__block {
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.label__date-time {
+    width: 40%;
+}
+
+.label__time {
+    text-align: right;
+    padding-right: 5%;
+}
+
+.label__date {
+    width: 42%;
+}
+
+.input__date, .input__time {
+    width: 60%;
+}
+
+.input__place {
+    width: 40%;
+}
+
+.discription__block {
+    align-items: stretch;
+}
+
+.textarea {
+    min-height: 120px;
+}
+
+.button__block {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.button__cansel {
+    background: $PrimaryColor;
+    color: $SecondaryColor;
+}

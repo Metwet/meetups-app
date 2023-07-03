@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Meetup } from 'src/app/models/meetup.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { MeetupService } from 'src/app/services/meetup.service';
@@ -10,14 +11,21 @@ import { MeetupService } from 'src/app/services/meetup.service';
 })
 export class MeetupCardComponent {
 
-  constructor (private authService: AuthService, private meetupService: MeetupService) {}
+  constructor (private authService: AuthService, private meetupService: MeetupService, private router: Router) {}
   isBlockVisible = false;
   isSubscribed:boolean = false;
+  isCardFather:boolean = false;
 
   @Input() meetup!: Meetup;
 
   ngOnInit(){
     this.isSubscribed = this.meetup.users.some((user) => user.id === this.authService.getCurrentUser().id);
+    this.isCardFather = this.meetup.createdBy === this.authService.getCurrentUser().id;
+  }
+
+  editMeetup(){
+    this.router.navigate(['/changemeetup', this.meetup.id], { state: { meetup: this.meetup } });
+    //this.router.navigateByUrl(`/changemeetup/${this.meetup.id}`)
   }
 
   toggleBlockVisibility():void {

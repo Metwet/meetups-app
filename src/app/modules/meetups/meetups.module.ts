@@ -5,6 +5,8 @@ import { MeetupListComponent } from './components/meetup-list/meetup-list.compon
 import { MymeetupsComponent } from './components/mymeetups/mymeetups.component';
 import { CreateMeetupComponent } from './components/create-meetup/create-meetup.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ChangeMeetupComponent } from './components/change-meetup/change-meetup.component';
 
 
 
@@ -13,11 +15,13 @@ import { FormsModule } from '@angular/forms';
     MeetupCardComponent,
     MeetupListComponent,
     MymeetupsComponent,
-    CreateMeetupComponent
+    CreateMeetupComponent,
+    ChangeMeetupComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     MeetupCardComponent,
