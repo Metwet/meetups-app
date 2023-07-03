@@ -78,6 +78,12 @@
     gap: 20px;
 }
 
+.subscribed {
+    background: $PrimaryColor;
+    color: $SecondaryColor;
+    width: auto;
+}
+
 .arrow_button {
     background: $AccentColor;
     text-align: center;

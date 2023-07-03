@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MeetupCardComponent } from './components/meetup-card/meetup-card.component';
 import { MeetupListComponent } from './components/meetup-list/meetup-list.component';
 import { MymeetupsComponent } from './components/mymeetups/mymeetups.component';
+import { CreateMeetupComponent } from './components/create-meetup/create-meetup.component';
 
 
 
@@ -10,7 +11,8 @@ import { MymeetupsComponent } from './components/mymeetups/mymeetups.component';
   declarations: [
     MeetupCardComponent,
     MeetupListComponent,
-    MymeetupsComponent
+    MymeetupsComponent,
+    CreateMeetupComponent
   ],
   imports: [
     CommonModule

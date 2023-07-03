@@ -27,4 +27,20 @@ export class MeetupService {
   deleteMeetup(meetup: Meetup): void {
 
   }
+
+  subscribeToMeetup(meetupId:number, userId:number):Observable<Meetup> {
+    const requestBody = {
+      idMeetup: meetupId,
+      idUser: userId
+    }
+    return this.http.put<Meetup>(`${this.baseUrl}`, requestBody)
+  }
+
+  unsubscribeToMeetup(meetupId:number, userId:number):Observable<Meetup>{
+    const requestBody = {
+      idMeetup: meetupId,
+      idUser: userId
+    }
+    return this.http.delete<Meetup>(`${this.baseUrl}`, {body:requestBody})
+  }
 }

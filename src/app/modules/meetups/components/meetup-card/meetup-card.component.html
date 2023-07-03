@@ -37,7 +37,9 @@
             <div class="creator">{{meetup.owner.fio}}</div>
         </div>
         <div class="buttons_block">
-            <button class="button">Я пойду</button>
+            <button class="button" [class.subscribed]="isSubscribed" (click)="toggleSubscription()">
+                {{ isSubscribed ? 'Не смогу пойти' : 'Я пойду' }}
+            </button>
             <button class="button arrow_button" (click)="toggleBlockVisibility()">
                 <img src="/assets/img/arrow.png" alt="arrow button" [ngClass]="{ 'rotated': isBlockVisible }">
             </button>
