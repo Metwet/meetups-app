@@ -17,7 +17,8 @@ export class MeetupService {
     return this.http.get<Meetup[]>(`${this.baseUrl}`);
   }
 
-  addMeetup(meetup: Meetup):void {
+  addMeetup(meetup:any):Observable<Meetup> {
+    return this.http.post<any>(`${this.baseUrl}`, meetup)
   }
 
   updateMeetup(meetup: Meetup):void {

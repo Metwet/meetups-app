@@ -1,1 +1,48 @@
-<p>create-meetup works!</p>
+<div class="container create__block" >
+    <h2 class="create__title">Создание митапа</h2>
+    <form class="form__block">
+        <div class="input__block name__block">
+            <label class="label__create">Название:</label>
+            <input class="input input__create" type="text" name="name" [(ngModel)]="meetupData.name" required>
+        </div>
+        <div class="input__block date-time__block">
+            <div class="input__block date__block">
+                <label class="label__create label__date-time label__date">Дата:</label>
+                <input class="input input__create input__date" type="datetime-local" name="data" [(ngModel)]="meetupData.time" required>
+            </div>
+            <div class="input__block time__block">
+                <label class="label__create label__date-time label__time">Время в мин:</label>
+                <input class="input input__create input__time" type="number" name="duration" [(ngModel)]="meetupData.duration" required>
+            </div>
+        </div>
+        <div class="input__block">
+            <label class="label__create">Место:</label>
+            <input class="input input__create input__place" type="text" name="location" [(ngModel)]="meetupData.location" required>
+        </div>
+        <div class="input__block discription__block">
+            <label class="label__create">Описание:</label>
+            <textarea class="input input__create textarea" type="text" name="description" [(ngModel)]="meetupData.description" required></textarea>
+        </div>
+        <div class="input__block discription__block">
+            <label class="label__create">Целевая аудитория:</label>
+            <textarea class="input input__create textarea" type="text" name="target_audience" [(ngModel)]="meetupData.target_audience"></textarea>
+        </div>
+        <div class="input__block discription__block">
+            <label class="label__create">Что надо знать?</label>
+            <textarea class="input input__create textarea" type="text" name="need_to_know" [(ngModel)]="meetupData.need_to_know"></textarea>
+        </div>
+        <div class="input__block discription__block">
+            <label class="label__create">Что будет?</label>
+            <textarea class="input input__create textarea" type="text" name="will_happen" [(ngModel)]="meetupData.will_happen"></textarea>
+        </div>
+        <div class="input__block discription__block">
+            <label class="label__create">Почему надо обязательно прийти?</label>
+            <textarea class="input input__create textarea" type="text" name="reason_to_come" [(ngModel)]="meetupData.reason_to_come"></textarea>
+        </div>
+        <h2 class="create__title" *ngIf="errorMessage">Заполните поля: <br> название, дата, время, место и описание </h2>
+        <div class="button__block">
+            <button class="button button__cansel">Отменить</button> 
+            <button class="button" type="submit" (click)="onSubmit()">Создать</button>
+        </div>
+    </form>
+</div>
