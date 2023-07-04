@@ -1,32 +1,31 @@
 @import '/src/styles.scss';
 
-.login__block {
+.reg__block {
     display: flex;
     justify-content: center;
 }
 
-.login__form {
+.reg__form {
     display: flex;
     flex-direction: column;
     width: 342px;
 }
 
-.login__input {
+.reg__input {
     height: 50px;
     margin-bottom: 24px;
     font-size: 18px;
     padding: 0 20px;
 }
 
-.login__footer {
+.reg__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 100px;
 }
 
-.signup__link {
-    text-decoration: underline;
-    color: $InfoColor;
-    font-size: 18px;
+.cansel__button {
+    background: $PrimaryColor;
+    color: $SecondaryColor;
 }

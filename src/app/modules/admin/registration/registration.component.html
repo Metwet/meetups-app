@@ -1,0 +1,11 @@
+<div class="container reg__block">
+    <form class="reg__form">
+        <input type="email" name="text" class="input reg__input" placeholder="Username" [(ngModel)]="userData.fio">
+        <input type="email" name="email" class="input reg__input" placeholder="Login" [(ngModel)]="userData.email">
+        <input type="password" name="password" class="input reg__input" placeholder="Password" [(ngModel)]="userData.password">
+        <div class="reg__footer">
+            <button class="button cansel__button" routerLink="/users">Отменить</button>
+            <button class="button" type="submit" (click)="addUser()">Создать</button>
+        </div>
+    </form>
+</div>

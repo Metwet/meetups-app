@@ -63,4 +63,8 @@ export class AuthService {
   getCurrentUser():User {
     return jwtDecode(this.getToken());
   }
+
+  regUser(email: string, password: string, fio:string):Observable<null> {
+    return this.http.post<null>(`${this.baseUrl}/auth/registration`, {email, password, fio})
+  }
 }

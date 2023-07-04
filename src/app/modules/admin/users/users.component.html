@@ -1,4 +1,7 @@
 <div class="container users__block">
+    <div class="container create__block">
+        <button class="button button__create" routerLink="/createuser">Создать пользователя</button>
+    </div>
     <div class="user__block" *ngFor="let user of users">
         <div class="email__block">
             <input type="email" class="input input__user" value={{user.email}}>
