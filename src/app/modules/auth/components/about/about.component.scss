@@ -1,0 +1,29 @@
+@import 'src/styles.scss';
+
+.about__block {
+    color: $BoldColor;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.main__title {
+    font-size: 34px;
+    font-family: 'Cherry Bomb One', cursive;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: $AccentColor;
+    margin-bottom: 14px;
+}
+
+.about__title {
+    margin: 16px 0 24px;
+    font-size: 20px;
+}
+
+.about__list {
+    list-style-position: inside;
+}

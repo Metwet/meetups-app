@@ -10,9 +10,11 @@ import { MymeetupsComponent } from './modules/meetups/components/mymeetups/mymee
 import { CreateMeetupComponent } from './modules/meetups/components/create-meetup/create-meetup.component';
 import { ChangeMeetupComponent } from './modules/meetups/components/change-meetup/change-meetup.component';
 import { RegistrationComponent } from './modules/admin/registration/registration.component';
+import { AboutComponent } from './modules/auth/components/about/about.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'main', component: MeetupListComponent, canActivate: [AuthGuard]},
   { path: 'mymeetups', component: MymeetupsComponent, canActivate: [AuthGuard]},
   { path: 'createmeetup', component: CreateMeetupComponent, canActivate: [AuthGuard]},
