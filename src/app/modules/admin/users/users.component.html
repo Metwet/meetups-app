@@ -4,22 +4,22 @@
     </div>
     <div class="user__block" *ngFor="let user of users">
         <div class="email__block">
-            <input type="email" class="input input__user" value={{user.email}}>
+            <input type="email" class="input input__user" value={{user.email}} [(ngModel)]="user.email">
         </div>
         <div class="password__block">
-            <input type="password" class="input input__user" placeholder="PASSWORD">
+            <input type="password" class="input input__user" [(ngModel)]="user.password">
         </div>
         <div class="select__block">
-            <select class="select select__user" [(ngModel)]="user.roles[0].name">
-                <option value="USER" selected>user</option>
-                <option value="ADMIN" selected>admin</option>
+            <select class="select select__user" [(ngModel)]="user.roles[0].name" (change)="updateRole(user)">
+                <option value="USER" [selected]="'USER' === user.roles[0].name">user</option>
+                <option value="ADMIN" [selected]="'ADMIN' === user.roles[0].name">admin</option>
             </select>
         </div>
         <div class="buttons__block">
-            <div class="button__block delete__button">
+            <div class="button__block delete__button" (click)="deleteUser(user.id)">
                 <img src="assets/img/close.svg" alt="delete">
             </div>
-            <div class="button__block save__button">
+            <div class="button__block save__button" (click)="updateUser(user)">
                 <img src="assets/img/edit.svg" alt="save">
             </div>
         </div>
