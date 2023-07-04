@@ -1,5 +1,15 @@
 <div class="list__block container">
     <div class="meetup-card" *ngIf="meetups.length > 0; else emptyList">
+        <div class="search__block">
+            <input
+              class="input search__input"
+              type="text"
+              placeholder="Поиск по названию"
+              [(ngModel)]="searchQuery"
+              (input)="searchMeetups()"
+            />
+            <img class="search_img" src="/assets/img/search.svg" alt="search__icon">
+        </div>
         <app-meetup-card *ngFor="let meetup of meetups" [meetup]="meetup"></app-meetup-card>
     </div>
     <ng-template #emptyList>
