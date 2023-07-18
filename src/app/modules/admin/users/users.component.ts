@@ -28,40 +28,40 @@ export class UsersComponent {
   }
 
   updateUser(user: User): void {
-    const updatedUser = {
-      email: user.email,
-      password: user.password,
-      fio: user.fio
-    };
-    console.log(updatedUser);
-    this.userService.updateUser(user.id, updatedUser).subscribe(
-      (res: any) => {
-        console.log('Пользователь успешно обновлен:', res);
-      }
-    );
+    alert(`Возможность изменения данных пользователей ограничена в демонстрационной версии`)
+    // const updatedUser = {
+    //   email: user.email,
+    //   password: user.password,
+    //   fio: user.fio
+    // };
+    // this.userService.updateUser(user.id, updatedUser).subscribe(
+    //   (res: any) => {
+    //     console.log('Пользователь успешно обновлен:', res);
+    //   }
+    // );
   }
 
   updateRole(user: User): void {
-    const selectedRole = user.roles[0].name === 'ADMIN' ? ['ADMIN'] : ['USER'];
-    const roleData = {
-      names: selectedRole,
-      userId: user.id
-    };
-    console.log(roleData);
-    
-    this.userService.updateUserRole(roleData).subscribe(
-      (res: any) => {
-        console.log('Роль пользователя обновлена:', res); 
-      }
-    );
+    alert(`Возможность изменения ролей пользователей ограничена в демонстрационной версии`)
+    // const selectedRole = user.roles[0].name === 'ADMIN' ? ['ADMIN'] : ['USER'];
+    // const roleData = {
+    //   names: selectedRole,
+    //   userId: user.id
+    // };    
+    // this.userService.updateUserRole(roleData).subscribe(
+    //   (res: any) => {
+    //     console.log('Роль пользователя обновлена:', res); 
+    //   }
+    // );
   }
 
   deleteUser(userId: number): void {
-    this.userService.deleteUser(userId).subscribe(
-      (res) => {
-        console.log('Пользователь удален:', res)
-        this.loadUsers();
-      }
-    );
+    alert(`Возможность удаления пользователей ограничена в демонстрационной версии`)
+    // this.userService.deleteUser(userId).subscribe(
+    //   (res) => {
+    //     console.log('Пользователь удален:', res)
+    //     this.loadUsers();
+    //   }
+    // );
   }
 }

@@ -17,12 +17,12 @@ export class RegistrationComponent {
   }
 
   addUser(){
-
-    this.authService.regUser(this.userData.email, this.userData.password, this.userData.fio).subscribe(
-      () => {
-        console.log('Пользователь создан');
-        this.router.navigate([`/users`])
-      }
-    );
+    alert(`Возможность создания новых пользователей ограничена в демонстрационной версии`)
+    // this.authService.regUser(this.userData.email, this.userData.password, this.userData.fio).subscribe(
+    //   () => {
+    //     console.log('Пользователь создан');
+    //     this.router.navigate([`/users`])
+    //   }
+    // );
   }
 }
